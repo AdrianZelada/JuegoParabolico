@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Tiro parabolico</title>
+		<script type="text/javascript" src="js/Punto2D.js"></script>
+		<script type="text/javascript" src="js/Rectangulo.js"></script>
+		<script type="text/javascript" src="js/Bola.js"></script>
+		<script type="text/javascript" src="js/Mundo.js"></script>
+		<script>	
+			var temporizador;
+			var juego;
+			function inicio(){
+				juego=new Mundo();
+				juego.constructor("contexto","lanzar","angulo","fuerza","limpiar");
+				
+				temporizador=setInterval("juego.loop();",20);
+			}
+			function log(texto,nueva){
+				var capa=document.getElementById("log");
+				if (nueva)
+					capa.innerHTML+="<br/>"+texto;
+				else
+					capa.innerHTML=texto;
+			}
+			function parar(){
+				clearInterval(temporizador);
+			}
+		</script>
+	</head>
+
+	<body onload="inicio();">
+		<canvas style="background-color:black;" id="contexto"></canvas>
+		<br/>
+		<button onclick="parar();">Parar</button>
+		<div>
+			Angulo: <input size="2" maxlength="2" id="angulo" type="text" value="45"/> Fuerza: <input size="2" maxlength="3" id="fuerza" type="text" value="50"/><br>
+			<button id="lanzar">Dispara!</button><br/>
+			Borrar estela disparos: <input id="limpiar" type="checkbox" />
+		</div>
+		<div id="log"></div>
+		
+	</body>
+</html>
