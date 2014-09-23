@@ -1,10 +1,7 @@
-/**********************************/
-/* Juan Gabriel Rodríguez Carrión */
-/*    jlabstudio.com       2012   */
-/**********************************/
+
 
 function Mundo(){
-	this.escalaTiempo=5;	//El tiempo transcurrirá X veces más rápido
+	this.escalaTiempo=5;	//El tiempo transcurrirï¿½ X veces mï¿½s rï¿½pido
 	
 	this.canvas;
 	this.contexto;
@@ -13,18 +10,18 @@ function Mundo(){
 	this.bolas=[];			//Las bolas que hay volando
 	this.elimBolas=[];		//Las bolas que hay que eliminar en la siguiente vuelta del bucle
 	
-	this.minRec=5;			//El número mínimo de obstáculos que pintar en el escenario
-	this.maxRec=10;			//El número máximo de obstáculos
+	this.minRec=5;			//El nï¿½mero mï¿½nimo de obstï¿½culos que pintar en el escenario
+	this.maxRec=10;			//El nï¿½mero mï¿½ximo de obstï¿½culos
 	this.rangoAltura=0.5; 	//Altura max obstaculos en relacion al heigth del canvas
 	this.rectangulos=[];	//Lista con los obstaculos
 	
 	this.ladoJugador=20;	//Lado del cuadrado que forma al jugador
-	this.jugadores=[];		//Lista de jugadores (habrá 2)
+	this.jugadores=[];		//Lista de jugadores (habrï¿½ 2)
 	
 	this.gravedad=9.8;		//Gravedad del mundo
-	this.maxViento=2;		//Máxima fuerza absoluta del viento
+	this.maxViento=2;		//Mï¿½xima fuerza absoluta del viento
 	this.viento=0;			//Viento actual
-	this.turnoViento=8;		//Número de turnos a transcurrir para cambiar el viento
+	this.turnoViento=8;		//Nï¿½mero de turnos a transcurrir para cambiar el viento
 	this.tiempoTranscurrido;	
 	this.funcionando=false;
 	
@@ -36,14 +33,14 @@ function Mundo(){
 	this.puntuacion0=0;
 	this.puntuacion1=0;
 	
-	this.numTurno=0;		//Número de turnos jugados en la partida actual
+	this.numTurno=0;		//Nï¿½mero de turnos jugados en la partida actual
 	this.turno=0;			//Jugador actual que tiene que disparar
 	
 	this.constructor=function(idCanvas,boton,angulo,fuerza,limpiar){
 		//Propiedades del canvas
 		this.canvas=document.getElementById(idCanvas);
 		this.canvas.width=1000;
-		this.canvas.height=600;
+		this.canvas.height=200;
 		this.canvas.style.backgroundColor="black";
 		this.contexto=this.canvas.getContext('2d');
 		//Formulario de recogida de datos
@@ -73,12 +70,12 @@ function Mundo(){
 	};
 	
 	this.generarMundo=function(){
-		//Obtenemos un número de obstaculos al azar
+		//Obtenemos un nï¿½mero de obstaculos al azar
 		var numRec=Math.round(Math.random()*(this.maxRec-this.minRec))+this.minRec;
 		//Obtemos la anchura exacta de cada obstaculo (a partir del width del canvas)
 		var anchura=this.canvas.width/numRec;
 		
-		//Creamos cada rectángulo de obstáculo con los datos adecuados
+		//Creamos cada rectï¿½ngulo de obstï¿½culo con los datos adecuados
 		var rec, altura;
 		for (var i=0;i<numRec;i++)
 		{

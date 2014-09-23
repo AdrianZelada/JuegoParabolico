@@ -1,7 +1,3 @@
-/**********************************/
-/* Juan Gabriel Rodríguez Carrión */
-/*    jlabstudio.com       2012   */
-/**********************************/
 
 /**
 * Clase que nos servirá para manejar los puntos

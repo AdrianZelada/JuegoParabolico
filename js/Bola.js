@@ -1,7 +1,3 @@
-/**********************************/
-/* Juan Gabriel Rodríguez Carrión */
-/*    jlabstudio.com       2012   */
-/**********************************/
 
 function Bola(mundo,radio,punto,color){
 
@@ -15,6 +11,8 @@ function Bola(mundo,radio,punto,color){
 	this.tiempo=0;
 	
 	this.destruida=false;
+
+
 	
 	//Creamos unas velocidades iniciales para el eje X e Y según el ángulo y la cantidad de fuerza suministrada
 	this.aplicarFuerza=function (velocidad,angulo){
@@ -37,6 +35,7 @@ function Bola(mundo,radio,punto,color){
 		if(this.centro.get("x")>this.mundo.get("anchura")+this.radio*4 || this.centro.get("y")>this.mundo.get("altura") || this.centro.get("x")<-this.radio*4){
 			this.mundo.eliminarBola(this);
 		}
+        console.log('asdccc');
 	};
 	this.dibujar=function(contexto){
 		if (this.destruida) return;
